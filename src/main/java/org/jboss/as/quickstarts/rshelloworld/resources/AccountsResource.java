@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
+@Path("/")
 public class AccountsResource {
 
     private static ArrayList<Account> accountsList = new ArrayList<Account>() {{

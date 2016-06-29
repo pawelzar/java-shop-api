@@ -2,7 +2,6 @@ package org.jboss.as.quickstarts.rshelloworld.model;
 
 public class Card {
 
-
     private String number;
     private String pin;
 

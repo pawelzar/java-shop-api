@@ -11,7 +11,6 @@ public class Hello {
     @GET
     @Produces(MediaType.TEXT_HTML)
     public String sayHtmlHello() {
-        return"<html> " + "<title>" + "BAWSJ API" + "</title>"
-                + "<body><h1>" + "REST API FOR BAWSJ PROJECT" + "</body></h1>" + "</html> ";
+        return"<html> " + "<title>" + "BAWSJ API" + "</title>" + "</html> ";
     }
 }

@@ -12,6 +12,7 @@ public class Account {
     public Account(String number, String amount) {
         this.number = number;
         this.amount = amount;
+        this.card = null;
     }
 
     public Account(String number, String amount, Card card) {

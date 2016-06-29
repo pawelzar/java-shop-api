@@ -3,31 +3,35 @@ package org.jboss.as.quickstarts.rshelloworld.model;
 
 public class User {
 
-    public String id;
-    public String firstname;
-    public String lastname;
-    public String email;
+    private String id;
+    private String firstName;
+    private String lastName;
+    private String email;
 
     public User() {
     }
 
-    public User(String id, String firstname, String lastname, String email) {
+    public User(String id, String firstName, String lastName, String email) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setEmail(String email) {

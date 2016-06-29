@@ -25,7 +25,7 @@ public class UsersResource {
     @Produces("application/json")
     public User getUserById(@PathParam("id") String userId) {
         for (User anUsersList : usersList) {
-            if (anUsersList.id.equals(userId)) {
+            if (anUsersList.getId().equals(userId)) {
                 return anUsersList;
             }
         }
@@ -42,7 +42,7 @@ public class UsersResource {
     @DELETE
     public String deleteUser(@PathParam("id") String userId) {
         for (int i = 0; i < usersList.size(); i++) {
-            if (usersList.get(i).id.equals(userId)) {
+            if (usersList.get(i).getId().equals(userId)) {
                 usersList.remove(i);
                 return "User succesfully deleted.";
             }

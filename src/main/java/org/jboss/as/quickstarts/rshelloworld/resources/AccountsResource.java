@@ -37,4 +37,17 @@ public class AccountsResource {
         }
         return null;
     }
+
+    @Path("/authorize")
+    @GET
+    @Produces("application/json")
+    public Account getAccount(@QueryParam("number") String number, @QueryParam("pin") String pin) {
+        for (Account account : accountsList) {
+            if (Objects.equals(account.getCard().getNumber(), number) &&
+                    Objects.equals(account.getCard().getPin(), pin)) {
+                return account;
+            }
+        }
+        return null;
+    }
 }

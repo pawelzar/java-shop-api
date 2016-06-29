@@ -12,9 +12,9 @@ import java.util.Objects;
 public class AccountsResource {
 
     private static ArrayList<Account> accountsList = new ArrayList<Account>() {{
-        add(new Account("1", "50.0", new Card("1", "1234")));
-        add(new Account("2", "0.0", new Card("2", "1234")));
-        add(new Account("3", "0.0", new Card("3", "1234")));
+        add(new Account("account 1", "50.0", new Card("1", "1234")));
+        add(new Account("account 2", "0.0", new Card("2", "1234")));
+        add(new Account("account 3", "1290.80", new Card("3", "1234")));
     }};
 
     @Path("/accounts")
@@ -25,12 +25,12 @@ public class AccountsResource {
     }
 
     @Path("/authorize")
-    @GET
+    @POST
     @Produces("application/json")
-    public Account getAccount(@QueryParam("number") String number, @QueryParam("pin") String pin) {
+    public Account getAccount(Card card) {
         for (Account account : accountsList) {
-            if (Objects.equals(account.getCard().getNumber(), number) &&
-                    Objects.equals(account.getCard().getPin(), pin)) {
+            if (Objects.equals(account.getCard().getNumber(), card.getNumber()) &&
+                    Objects.equals(account.getCard().getPin(), card.getPin())) {
                 return account;
             }
         }

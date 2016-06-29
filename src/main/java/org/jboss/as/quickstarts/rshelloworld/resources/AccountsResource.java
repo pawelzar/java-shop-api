@@ -27,19 +27,19 @@ public class AccountsResource {
     @Path("/accounts")
     @POST
     @Consumes("application/json")
-    public void addAccount(Account newAccount) {
-        for (Account account : accountsList) {
-            if (Objects.equals(account.getNumber(), newAccount.getNumber())) {
-                account.setAmount(newAccount.getAmount());
-            }
-        }
+    public void addAccount(Account account) {
+        accountsList.add(account);
     }
 
     @Path("/accounts")
     @PUT
     @Consumes("application/json")
-    public void updateAccount(Account account) {
-        accountsList.add(account);
+    public void updateAccount(Account newAccount) {
+        for (Account account : accountsList) {
+            if (Objects.equals(account.getNumber(), newAccount.getNumber())) {
+                account.setAmount(newAccount.getAmount());
+            }
+        }
     }
 
     @Path("/authorize")

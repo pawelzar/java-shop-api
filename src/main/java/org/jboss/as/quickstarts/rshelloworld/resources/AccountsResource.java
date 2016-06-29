@@ -17,6 +17,13 @@ public class AccountsResource {
         add(new Account("account 3", "1290.80", new Card("3", "1234")));
     }};
 
+    @Path("/accounts")
+    @GET
+    @Produces("application/json")
+    public ArrayList<Account> getAccounts() {
+        return accountsList;
+    }
+
     @Path("/authorize")
     @POST
     @Consumes("application/json")
@@ -30,6 +37,7 @@ public class AccountsResource {
         }
         return accountsList.get(0);
     }
+
 
     @Path("/accounts")
     @POST

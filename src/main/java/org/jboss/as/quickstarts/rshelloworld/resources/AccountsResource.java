@@ -12,9 +12,9 @@ import java.util.Objects;
 public class AccountsResource {
 
     private static ArrayList<Account> accountsList = new ArrayList<Account>() {{
-        add(new Account("account 1", "50.0", new Card("1", "1234")));
-        add(new Account("account 2", "0.0", new Card("2", "1234")));
-        add(new Account("account 3", "1290.80", new Card("3", "1234")));
+        add(new Account("11111", "50.0", new Card("1", "1234")));
+        add(new Account("22222", "0.0", new Card("2", "1234")));
+        add(new Account("33333", "1290.80", new Card("3", "1234")));
     }};
 
     @Path("/accounts")
@@ -22,6 +22,24 @@ public class AccountsResource {
     @Produces("application/json")
     public ArrayList<Account> getAccounts() {
         return accountsList;
+    }
+
+    @Path("/accounts")
+    @POST
+    @Consumes("application/json")
+    public void addAccount(Account newAccount) {
+        for (Account account : accountsList) {
+            if (Objects.equals(account.getNumber(), newAccount.getNumber())) {
+                account.setAmount(newAccount.getAmount());
+            }
+        }
+    }
+
+    @Path("/accounts")
+    @PUT
+    @Consumes("application/json")
+    public void updateAccount(Account account) {
+        accountsList.add(account);
     }
 
     @Path("/authorize")
@@ -35,15 +53,7 @@ public class AccountsResource {
                 return account;
             }
         }
-        return accountsList.get(0);
-    }
-
-
-    @Path("/accounts")
-    @POST
-    @Consumes("application/json")
-    public void addAccount(Account account) {
-        accountsList.add(account);
+        return null;
     }
 
     @Path("/authorize")

@@ -63,13 +63,13 @@ public class AccountsResource {
         for (Account account : accountsList) {
             if (Objects.equals(account.getCard().getNumber(), number) &&
                     Objects.equals(account.getCard().getPin(), pin)) {
-                return account;
+                return new Account(account.getNumber(), account.getAmount());
             }
         }
         return null;
     }
 
-    @Path("./cards")
+    @Path("/cards")
     @PUT
     @Consumes("application/json")
     public void changePin(Card newCard) {

@@ -12,9 +12,9 @@ import java.util.Objects;
 public class AccountsResource {
 
     private static ArrayList<Account> accountsList = new ArrayList<Account>() {{
-        add(new Account("1", "50.0"));
-        add(new Account("2", "0.0"));
-        add(new Account("3", "0.0", new Card("123456", "12345")));
+        add(new Account("1", "50.0", new Card("1", "1234")));
+        add(new Account("2", "0.0", new Card("2", "1234")));
+        add(new Account("3", "0.0", new Card("3", "1234")));
     }};
 
     @Path("/accounts")

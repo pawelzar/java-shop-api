@@ -25,13 +25,12 @@ public class AccountsResource {
     }
 
     @Path("/authorize")
-    @POST
-    @Consumes("application/json")
+    @GET
     @Produces("application/json")
-    public Account getAccount(Card card) {
+    public Account getAccount(@QueryParam("number") String number, @QueryParam("pin") String pin) {
         for (Account account : accountsList) {
-            if (Objects.equals(account.getCard().getNumber(), card.getNumber()) &&
-                    Objects.equals(account.getCard().getPin(), card.getPin())) {
+            if (Objects.equals(account.getCard().getNumber(), number) &&
+                    Objects.equals(account.getCard().getPin(), pin)) {
                 return account;
             }
         }

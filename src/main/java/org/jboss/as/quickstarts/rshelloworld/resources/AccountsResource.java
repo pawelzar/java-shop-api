@@ -2,6 +2,7 @@ package org.jboss.as.quickstarts.rshelloworld.resources;
 
 import org.jboss.as.quickstarts.rshelloworld.model.Account;
 import org.jboss.as.quickstarts.rshelloworld.model.Card;
+import org.jboss.as.quickstarts.rshelloworld.model.SimpleAccount;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;
@@ -46,11 +47,11 @@ public class AccountsResource {
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    public Account getAccount(Card card) {
+    public SimpleAccount getAccount(Card card) {
         for (Account account : accountsList) {
             if (Objects.equals(account.getCard().getNumber(), card.getNumber()) &&
                     Objects.equals(account.getCard().getPin(), card.getPin())) {
-                return account;
+                return new SimpleAccount(account.getNumber(), account.getAmount());
             }
         }
         return null;
@@ -59,11 +60,11 @@ public class AccountsResource {
     @Path("/authorize")
     @GET
     @Produces("application/json")
-    public Account getAccount(@QueryParam("number") String number, @QueryParam("pin") String pin) {
+    public SimpleAccount getAccount(@QueryParam("number") String number, @QueryParam("pin") String pin) {
         for (Account account : accountsList) {
             if (Objects.equals(account.getCard().getNumber(), number) &&
                     Objects.equals(account.getCard().getPin(), pin)) {
-                return new Account(account.getNumber(), account.getAmount());
+                return new SimpleAccount(account.getNumber(), account.getAmount());
             }
         }
         return null;

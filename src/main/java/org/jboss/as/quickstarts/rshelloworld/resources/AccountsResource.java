@@ -68,4 +68,16 @@ public class AccountsResource {
         }
         return null;
     }
+
+    @Path("/accounts/cards")
+    @PUT
+    @Consumes("application/json")
+    public void changePin(Card newCard) {
+        for (Account account : accountsList) {
+            if (Objects.equals(account.getCard().getNumber(), newCard.getNumber())) {
+                account.getCard().setPin(newCard.getPin());
+            }
+        }
+    }
+
 }

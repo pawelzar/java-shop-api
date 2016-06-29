@@ -3,19 +3,19 @@ package org.jboss.as.quickstarts.rshelloworld.model;
 public class Account {
 
     private String number;
-    private String amount;
+    private double amount;
     private Card card;
 
     public Account() {
     }
 
-    public Account(String number, String amount) {
+    public Account(String number, double amount) {
         this.number = number;
         this.amount = amount;
         this.card = null;
     }
 
-    public Account(String number, String amount, Card card) {
+    public Account(String number, double amount, Card card) {
         this.number = number;
         this.amount = amount;
         this.card = card;
@@ -29,11 +29,11 @@ public class Account {
         this.number = number;
     }
 
-    public String getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

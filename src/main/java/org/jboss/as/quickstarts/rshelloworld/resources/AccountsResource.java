@@ -69,7 +69,7 @@ public class AccountsResource {
         return null;
     }
 
-    @Path("/accounts/cards")
+    @Path("./cards")
     @PUT
     @Consumes("application/json")
     public void changePin(Card newCard) {

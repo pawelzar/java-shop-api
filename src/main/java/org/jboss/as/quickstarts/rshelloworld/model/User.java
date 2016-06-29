@@ -1,10 +1,9 @@
-package org.jboss.as.quickstarts.rshelloworld.rest.dao;
+package org.jboss.as.quickstarts.rshelloworld.model;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.FormParam;
-import java.util.List;
 
-public class User{
+public class User {
 
     @NotNull
     @FormParam("login")
@@ -14,14 +13,11 @@ public class User{
     @FormParam("name")
     private String name;
 
-    private String email;
-    private List<String> tags;
-
     public User() {
         //
     }
 
-    public User(String login, String name, String email, List<String> tags) {
+    public User(String login, String name) {
         this.name = name;
         this.login = login;
     }

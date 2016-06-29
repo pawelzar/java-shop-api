@@ -1,7 +1,7 @@
 package org.jboss.as.quickstarts.rshelloworld.rest;
 
 import org.jboss.as.quickstarts.rshelloworld.repository.UserRepository;
-import org.jboss.as.quickstarts.rshelloworld.rest.dao.User;
+import org.jboss.as.quickstarts.rshelloworld.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.Valid;

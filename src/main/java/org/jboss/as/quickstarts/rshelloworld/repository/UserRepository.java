@@ -1,13 +1,12 @@
 package org.jboss.as.quickstarts.rshelloworld.repository;
 
-import org.jboss.as.quickstarts.rshelloworld.rest.dao.User;
-import org.springframework.stereotype.Component;
+import org.jboss.as.quickstarts.rshelloworld.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Component
+//@Component
 public class UserRepository {
 
     private final List<User> users = new ArrayList<>();

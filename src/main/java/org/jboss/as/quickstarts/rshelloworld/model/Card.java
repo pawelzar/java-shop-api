@@ -14,8 +14,16 @@ public class Card {
         this.pin = pin;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getPin() {
+        return pin;
     }
 
     public void setPin(float amount) {

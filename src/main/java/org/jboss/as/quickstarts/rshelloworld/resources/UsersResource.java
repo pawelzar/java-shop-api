@@ -1,4 +1,6 @@
-package org.jboss.as.quickstarts.rshelloworld;
+package org.jboss.as.quickstarts.rshelloworld.resources;
+
+import org.jboss.as.quickstarts.rshelloworld.model.User;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;
@@ -7,33 +9,24 @@ import java.util.ArrayList;
 @Path("/users")
 public class UsersResource {
 
-    public static ArrayList<User> usersList = new ArrayList<User>() {{
+    private static ArrayList<User> usersList = new ArrayList<User>() {{
         add(new User("1", "Jan", "Kowalski", "jk@email.com"));
         add(new User("2", "Andrzej", "Nowak", "an@email.com"));
     }};
 
     @GET
     @Produces("application/json")
-    public ArrayList<User> getUsers(@DefaultValue("") @QueryParam("lastname") String lastname) {
-        if (!lastname.equals("")) {
-            ArrayList<User> expectedUser = new ArrayList<User>();
-            for (User user: usersList) {
-                if (lastname.equals(user.lastname)) {
-                    expectedUser.add(user);
-                }
-            }
-            return expectedUser;
-        }
-        else return usersList;
+    public ArrayList<User> getUsers() {
+        return usersList;
     }
 
     @Path("/{id}")
     @GET
     @Produces("application/json")
     public User getUserById(@PathParam("id") String userId) {
-        for (int i = 0; i < usersList.size(); i++) {
-            if (usersList.get(i).id.equals(userId)) {
-                return usersList.get(i);
+        for (User anUsersList : usersList) {
+            if (anUsersList.id.equals(userId)) {
+                return anUsersList;
             }
         }
         return null;

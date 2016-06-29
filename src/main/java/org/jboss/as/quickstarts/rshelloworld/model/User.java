@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.rshelloworld;
+package org.jboss.as.quickstarts.rshelloworld.model;
 
 
 public class User {

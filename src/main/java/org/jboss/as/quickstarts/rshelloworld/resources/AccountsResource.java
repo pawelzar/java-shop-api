@@ -26,6 +26,7 @@ public class AccountsResource {
 
     @Path("/authorize")
     @POST
+    @Consumes("application/json")
     @Produces("application/json")
     public Account getAccount(Card card) {
         for (Account account : accountsList) {
@@ -34,6 +35,6 @@ public class AccountsResource {
                 return account;
             }
         }
-        return accountsList.get(0);
+        return null;
     }
 }

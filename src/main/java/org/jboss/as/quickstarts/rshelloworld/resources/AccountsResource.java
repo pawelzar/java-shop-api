@@ -17,7 +17,7 @@ public class AccountsResource {
         add(new Account("2", "0.0"));
         add(new Account("3", "0.0", new Card("123456", "12345")));
     }};
-    
+
     @GET
     @Produces("application/json")
     public ArrayList<Account> getAccounts() {

@@ -9,7 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import java.util.Objects;
 
-@Path("/accounts")
+@Path("/authorize")
 public class Authorization {
 
     @GET

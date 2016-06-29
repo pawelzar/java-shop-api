@@ -2,13 +2,13 @@ package org.jboss.as.quickstarts.rshelloworld.model;
 
 public class Account {
 
-    private String number;
-    private double amount;
+    public String number;
+    public String amount;
 
     public Account() {
     }
 
-    public Account(String number, double amount) {
+    public Account(String number, String amount) {
         this.number = number;
         this.amount = amount;
     }
@@ -17,7 +17,7 @@ public class Account {
         this.number = number;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 }

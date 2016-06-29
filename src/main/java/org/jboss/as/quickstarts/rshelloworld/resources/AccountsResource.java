@@ -12,13 +12,13 @@ import java.util.ArrayList;
 public class AccountsResource {
 
     private static ArrayList<Account> accountsList = new ArrayList<Account>() {{
-        add(new Account("1", 50.0));
-        add(new Account("2", 0.0));
+        add(new Account("1", "50.0"));
+        add(new Account("2", "0.0"));
     }};
 
     @GET
     @Produces("application/json")
-    public ArrayList<Account> getUsers() {
+    public ArrayList<Account> getAccounts() {
         return accountsList;
     }
 }

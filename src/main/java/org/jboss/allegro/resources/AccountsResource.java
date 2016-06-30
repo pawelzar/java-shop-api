@@ -1,8 +1,9 @@
-package org.jboss.as.quickstarts.rshelloworld.resources;
+package org.jboss.allegro.resources;
 
-import org.jboss.as.quickstarts.rshelloworld.model.Account;
-import org.jboss.as.quickstarts.rshelloworld.model.Card;
-import org.jboss.as.quickstarts.rshelloworld.model.SimpleAccount;
+import org.jboss.allegro.exceptions.CardException;
+import org.jboss.allegro.model.Account;
+import org.jboss.allegro.model.Card;
+import org.jboss.allegro.model.SimpleAccount;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;
@@ -48,13 +49,17 @@ public class AccountsResource {
     @Consumes("application/json")
     @Produces("application/json")
     public SimpleAccount getAccount(Card card) {
+        SimpleAccount simpleAccount = null;
         for (Account account : accountsList) {
             if (Objects.equals(account.getCard().getNumber(), card.getNumber()) &&
                     Objects.equals(account.getCard().getPin(), card.getPin())) {
-                return new SimpleAccount(account.getNumber(), account.getAmount());
+                simpleAccount = new SimpleAccount(account.getNumber(), account.getAmount());
             }
         }
-        return null;
+        if (simpleAccount == null) {
+            throw new CardException("Card not found", "Authorization failed");
+        }
+        return simpleAccount;
     }
 
     @Path("/authorize")

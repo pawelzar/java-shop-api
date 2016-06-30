@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.rshelloworld.model;
+package org.jboss.allegro.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

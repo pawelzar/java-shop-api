@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.rshelloworld.welcome;
+package org.jboss.allegro.welcome;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

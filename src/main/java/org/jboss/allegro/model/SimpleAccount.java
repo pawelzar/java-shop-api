@@ -1,10 +1,9 @@
-package org.jboss.as.quickstarts.rshelloworld.model;
+package org.jboss.allegro.model;
 
 public class SimpleAccount {
 
     private String number;
     private double amount;
-
 
     public SimpleAccount() {
     }

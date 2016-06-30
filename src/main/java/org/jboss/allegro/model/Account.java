@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.rshelloworld.model;
+package org.jboss.allegro.model;
 
 public class Account {
 
@@ -12,6 +12,7 @@ public class Account {
     public Account(String number, double amount) {
         this.number = number;
         this.amount = amount;
+        this.card = null;
     }
 
     public Account(String number, double amount, Card card) {

@@ -1,6 +1,6 @@
-package org.jboss.as.quickstarts.rshelloworld.resources;
+package org.jboss.allegro.resources;
 
-import org.jboss.as.quickstarts.rshelloworld.model.User;
+import org.jboss.allegro.model.User;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;

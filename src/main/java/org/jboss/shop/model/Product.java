@@ -1,4 +1,4 @@
-package org.jboss.allegro.model;
+package org.jboss.shop.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

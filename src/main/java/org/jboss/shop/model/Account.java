@@ -1,4 +1,4 @@
-package org.jboss.allegro.model;
+package org.jboss.shop.model;
 
 public class Account {
 

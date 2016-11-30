@@ -1,9 +1,9 @@
-package org.jboss.allegro.resources;
+package org.jboss.shop.resources;
 
-import org.jboss.allegro.exceptions.CardException;
-import org.jboss.allegro.model.Account;
-import org.jboss.allegro.model.Card;
-import org.jboss.allegro.model.SimpleAccount;
+import org.jboss.shop.exceptions.CardException;
+import org.jboss.shop.model.Account;
+import org.jboss.shop.model.Card;
+import org.jboss.shop.model.SimpleAccount;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;

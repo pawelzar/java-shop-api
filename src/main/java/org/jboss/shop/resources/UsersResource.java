@@ -1,6 +1,6 @@
-package org.jboss.allegro.resources;
+package org.jboss.shop.resources;
 
-import org.jboss.allegro.model.User;
+import org.jboss.shop.model.User;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;

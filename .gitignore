@@ -1,4 +1,5 @@
-.project
 .idea
-.target
+.openshift
+deployments
+target
 *.iml

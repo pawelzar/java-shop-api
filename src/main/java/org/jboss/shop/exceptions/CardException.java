@@ -1,4 +1,4 @@
-package org.jboss.allegro.exceptions;
+package org.jboss.shop.exceptions;
 
 
 import javax.ws.rs.WebApplicationException;

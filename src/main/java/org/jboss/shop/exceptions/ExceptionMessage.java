@@ -1,4 +1,4 @@
-package org.jboss.allegro.exceptions;
+package org.jboss.shop.exceptions;
 
 public class ExceptionMessage {
     private String message;

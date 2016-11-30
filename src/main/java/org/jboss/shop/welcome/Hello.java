@@ -1,4 +1,4 @@
-package org.jboss.allegro.welcome;
+package org.jboss.shop.welcome;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
